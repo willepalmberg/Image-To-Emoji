@@ -1,0 +1,2 @@
+## Image To Emoji
+This will be an application that with machine learning will try to replicate an image only using emojis as best as possible. Machine learning is not an efficient way of doing this, but it is fun
