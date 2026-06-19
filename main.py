@@ -13,10 +13,10 @@ font.close()
 im = Image.open("test_image.jpg")
 
 agent = Agent(im, FONT_PATH, emojis, 20)
-im = agent.place_random_emoji()
+
 for i, x in enumerate(range(100)):
-    a = Agent(im, FONT_PATH, emojis, 20)
-    im = a.place_random_emoji()
+    agent.place_random_emoji()
     print(f"{i+1}/100")
-im.show()
+
+agent.image.show()
 
