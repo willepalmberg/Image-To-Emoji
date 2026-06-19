@@ -5,7 +5,7 @@ from random import randint, choice
 
 class Agent:
     def __init__(self, image: Image.Image, font, emojis: list[str], emoji_size):
-        self.image = image
+        self.image = image.copy().convert("RGBA")
         self.final_image = None
         self.emojis = emojis
         self.font_path = font
@@ -15,7 +15,7 @@ class Agent:
 
 
     def place_random_emoji(self) -> Image.Image:
-        image = self.image.copy().convert("RGBA")
+        image = self.image
 
         chosen = choice(self.emojis)
 
