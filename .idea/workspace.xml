@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1313731c-87a9-4ec2-be5a-191a8330d76a" name="Changes" comment="Optimisation">
-      <change beforePath="$PROJECT_DIR$/.idea/ImageToEmoji.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ImageToEmoji.iml" afterDir="false" />
+    <list default="true" id="1313731c-87a9-4ec2-be5a-191a8330d76a" name="Changes" comment="test">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +122,7 @@
       <workItem from="1781791150975" duration="551000" />
       <workItem from="1781810084691" duration="3392000" />
       <workItem from="1781865103306" duration="2441000" />
-      <workItem from="1783091497446" duration="112000" />
+      <workItem from="1783091497446" duration="129000" />
     </task>
     <task id="LOCAL−00001" summary="Setup project structure">
       <option name="closed" value="true" />
@@ -243,7 +243,14 @@
       <option name="presentableId" value="LOCAL−00017" />
       <updated>1783091567123</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL−00018" summary="test">
+      <option name="closed" value="true" />
+      <created>1783091622057</created>
+      <option name="number" value="LOCAL−00018" />
+      <option name="presentableId" value="LOCAL−00018" />
+      <updated>1783091622057</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +271,8 @@
     <MESSAGE value="Extrahera emojis från fontfilen" />
     <MESSAGE value="Hittade ett library att rendera emojis" />
     <MESSAGE value="Optimisation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimisation" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ImageToEmoji$agent.coverage" NAME="agent Coverage Results" MODIFIED="1781811550868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend" />
