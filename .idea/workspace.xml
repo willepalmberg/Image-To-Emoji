@@ -7,7 +7,6 @@
     <list default="true" id="1313731c-87a9-4ec2-be5a-191a8330d76a" name="Changes" comment="Optimisation">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/agent.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="15" />
+    <option name="cachedIndexableFilesCount" value="16" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -122,7 +121,8 @@
       <updated>1781791148859</updated>
       <workItem from="1781791150975" duration="551000" />
       <workItem from="1781810084691" duration="3392000" />
-      <workItem from="1781865103306" duration="1457000" />
+      <workItem from="1781865103306" duration="2441000" />
+      <workItem from="1783091497446" duration="61000" />
     </task>
     <task id="LOCAL−00001" summary="Setup project structure">
       <option name="closed" value="true" />
@@ -222,7 +222,14 @@
       <option name="presentableId" value="LOCAL−00014" />
       <updated>1781866359897</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL−00015" summary="Optimisation">
+      <option name="closed" value="true" />
+      <created>1781866571721</created>
+      <option name="number" value="LOCAL−00015" />
+      <option name="presentableId" value="LOCAL−00015" />
+      <updated>1781866571722</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
