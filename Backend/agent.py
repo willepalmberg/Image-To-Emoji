@@ -16,7 +16,7 @@ class Agent:
     def _measure_emoji_size(self) -> tuple[int, int]:
         scratch = Image.new("RGBA", (1, 1))
         draw = ImageDraw.Draw(scratch)
-        sample = self.emojis[0]
+        sample = self.emojis[10]
         bbox = draw.textbbox((0, 0), sample, font=self.font, embedded_color=True)
         return int(bbox[2]) - int(bbox[0]), int(bbox[3]) - int(bbox[1])
 
@@ -24,8 +24,9 @@ class Agent:
         image = self.image
         chosen = choice(self.emojis).strip()
 
-        randx = randint(0, max(image.width - self.emoji_width, 0))
-        randy = randint(0, max(image.height - self.emoji_height, 0))
+        randx = randint(-self.emoji_width, image.width)
+        randy = randint(-self.emoji_height, image.height)
+        print(self.emoji_width, self.emoji_height)
 
         with Pilmoji(image) as pilmoji:
             pilmoji.text((randx, randy), chosen, (0, 0, 0), self.font)
