@@ -14,7 +14,7 @@ im = Image.open("test_image.jpg")
 
 agent = Agent(im, FONT_PATH, emojis, 20)
 
-for i, x in enumerate(range(100)):
+for i, x in enumerate(range(10)):
     agent.place_random_emoji()
     print(f"{i+1}/100")
 
