@@ -74,6 +74,15 @@ def convert_svgs_to_pngs():
 
             print(f'({i+1}/{len(os.listdir(EMOJI_PATH_SVG))}) | {filename} converted to PNG')
 
+def load_emojis_to_memory():
+    emojis = []
+    for filename in os.listdir(EMOJI_PATH_PNG):
+        if filename.endswith('.png'):
+            emoji_path = os.path.join(EMOJI_PATH_PNG, filename)
+            emoji = cv2.imread(emoji_path)
+            emojis.append(emoji)
+    return emojis
+
 if os.path.isfile('emojis.zip'):
     print("emojis.zip already exists")
 else:
@@ -94,3 +103,7 @@ if not os.path.exists(EMOJI_PATH_PNG):
 
 if len(os.listdir(EMOJI_PATH_PNG)) == 0:
     convert_svgs_to_pngs()
+
+
+emojis = load_emojis_to_memory()
+print(f'Loaded {len(emojis)} emojis into memory')
