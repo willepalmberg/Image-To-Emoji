@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1313731c-87a9-4ec2-be5a-191a8330d76a" name="Changes" comment="Nerrladdning, extrahera och konvertera fungerar nu">
+      <change afterPath="$PROJECT_DIR$/Backend/emoji.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -14,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="15" />
+    <option name="cachedIndexableFilesCount" value="7393" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -124,7 +125,8 @@
       <workItem from="1781865103306" duration="2441000" />
       <workItem from="1783091497446" duration="1328000" />
       <workItem from="1783092844222" duration="62000" />
-      <workItem from="1783161052029" duration="5367000" />
+      <workItem from="1783161052029" duration="5710000" />
+      <workItem from="1783178061791" duration="526000" />
     </task>
     <task id="LOCAL−00001" summary="Setup project structure">
       <option name="closed" value="true" />
@@ -315,7 +317,14 @@
       <option name="presentableId" value="LOCAL−00027" />
       <updated>1783166393864</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL−00028" summary="Nerrladdning, extrahera och konvertera fungerar nu">
+      <option name="closed" value="true" />
+      <created>1783166614658</created>
+      <option name="number" value="LOCAL−00028" />
+      <option name="presentableId" value="LOCAL−00028" />
+      <updated>1783166614658</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,6 +357,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ImageToEmoji$agent.coverage" NAME="agent Coverage Results" MODIFIED="1781811550868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend" />
-    <SUITE FILE_PATH="coverage/ImageToEmoji$main.coverage" NAME="main Coverage Results" MODIFIED="1783166315155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ImageToEmoji$main.coverage" NAME="main Coverage Results" MODIFIED="1783178574171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
