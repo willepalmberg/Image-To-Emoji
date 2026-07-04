@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1313731c-87a9-4ec2-be5a-191a8330d76a" name="Changes" comment="Nu placeras emojis korrekt">
+    <list default="true" id="1313731c-87a9-4ec2-be5a-191a8330d76a" name="Changes" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/agent.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="16" />
+    <option name="cachedIndexableFilesCount" value="15" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -122,7 +121,8 @@
       <workItem from="1781791150975" duration="551000" />
       <workItem from="1781810084691" duration="3392000" />
       <workItem from="1781865103306" duration="2441000" />
-      <workItem from="1783091497446" duration="1312000" />
+      <workItem from="1783091497446" duration="1328000" />
+      <workItem from="1783092844222" duration="62000" />
     </task>
     <task id="LOCAL−00001" summary="Setup project structure">
       <option name="closed" value="true" />
@@ -264,7 +264,14 @@
       <option name="presentableId" value="LOCAL−00020" />
       <updated>1783092399989</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL−00021" summary="test">
+      <option name="closed" value="true" />
+      <created>1783092820493</created>
+      <option name="number" value="LOCAL−00021" />
+      <option name="presentableId" value="LOCAL−00021" />
+      <updated>1783092820493</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,9 +292,9 @@
     <MESSAGE value="Extrahera emojis från fontfilen" />
     <MESSAGE value="Hittade ett library att rendera emojis" />
     <MESSAGE value="Optimisation" />
-    <MESSAGE value="test" />
     <MESSAGE value="Nu placeras emojis korrekt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nu placeras emojis korrekt" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ImageToEmoji$agent.coverage" NAME="agent Coverage Results" MODIFIED="1781811550868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend" />

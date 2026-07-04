@@ -3,7 +3,9 @@ name = "imagetoemoji"
 version = "0.1.0"
 requires-python = ">=3.14"
 dependencies = [
+    "emoji>=2.15.0",
     "fonttools>=4.63.0",
+    "opencv-python>=5.0.0.93",
     "pillow>=12.2.0",
     "pilmoji>=2.0.5",
 ]
