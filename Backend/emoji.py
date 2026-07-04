@@ -39,6 +39,7 @@ class Emoji:
                     sys.stdout.flush()
 
     def extract_emojis(self):
+        os.makedirs(self.emoji_path_png, exist_ok=True)
         print(f'Extracting emojis.zip to {self.emoji_path_svg}')
 
         if not os.path.exists(self.emoji_path_svg):
@@ -55,24 +56,30 @@ class Emoji:
                         shutil.copyfileobj(source, target)
 
     def convert_svgs_to_pngs(self):
-        if not os.path.exists:
-            os.makedirs(self.emoji_path_png)
+        os.makedirs(self.emoji_path_png, exist_ok=True)
 
-        for i, filename in enumerate(os.listdir(self.emoji_path_svg)):
-            if filename.endswith('.svg'):
-                svg_path = os.path.join(self.emoji_path_svg, filename)
-                png_path = os.path.join(self.emoji_path_png, filename.replace('.svg', '.png'))
+        svg_files = [f for f in os.listdir(self.emoji_path_svg) if f.endswith('.svg')]
+        total = len(svg_files)
 
-                png_bytes = svg_to_bytes(svg_path=svg_path, width=self.emoji_size, height=self.emoji_size)
-                rendered_img = Image.open(BytesIO(bytes(png_bytes))).convert('RGBA')
+        for i, filename in enumerate(svg_files):
 
+            svg_path = os.path.join(self.emoji_path_svg, filename)
+            png_path = os.path.join(self.emoji_path_png, filename.replace('.svg', '.png'))
+
+            png_bytes = svg_to_bytes(svg_path=svg_path, width=self.emoji_size, height=self.emoji_size)
+            rendered_img = Image.open(BytesIO(bytes(png_bytes))).convert('RGBA')
+
+            if rendered_img.size == (self.emoji_size, self.emoji_size):
+                rendered_img.save(png_path)
+
+            else:
                 canvas = Image.new('RGBA', (self.emoji_size, self.emoji_size), (0, 0, 0, 0))
                 paste_x = (self.emoji_size - rendered_img.width) // 2
                 paste_y = (self.emoji_size - rendered_img.height) // 2
                 canvas.paste(rendered_img, (paste_x, paste_y), rendered_img)
                 canvas.save(png_path)
 
-                print(f'({i + 1}/{len(os.listdir(self.emoji_path_svg))}) | {filename} converted to PNG')
+            print(f'({i + 1}/{total}) | {filename} converted to PNG')
 
     def load_emojis_to_memory(self):
         emojis = []
