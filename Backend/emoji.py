@@ -1,5 +1,6 @@
 from resvg_py import svg_to_bytes
 from zipfile import ZipFile
+from random import randint
 from requests import get
 from io import BytesIO
 from PIL import Image
@@ -18,6 +19,8 @@ class Emoji:
         self.emoji_size = emoji_size
         self.emoji_path_svg = emoji_path_svg
         self.emoji_path_png = emoji_path_png
+
+        self.emojis = []
 
     # Från https://stackoverflow.com/questions/15644964/python-progress-bar-and-downloads
     def download_emojis(self):
@@ -88,4 +91,8 @@ class Emoji:
                 emoji_path = os.path.join(self.emoji_path_png, filename)
                 emoji = cv2.imread(emoji_path)
                 emojis.append(Image.fromarray(emoji))
-        return emojis
+
+        self.emojis = emojis
+
+    def grab_random_emoji(self):
+        return self.emojis[randint(0, len(self.emojis) - 1)]
