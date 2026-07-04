@@ -5,6 +5,7 @@ from requests import get
 from io import BytesIO
 from PIL import Image
 
+import numpy as np
 import shutil
 import sys
 import cv2
@@ -58,6 +59,18 @@ class Emoji:
                     with z.open(file) as source, open(target_path, 'wb') as target:
                         shutil.copyfileobj(source, target)
 
+    @staticmethod
+    def _fix_premultiplied_alpha(self, img: Image.Image) -> Image.Image:
+        arr = np.asarray(img).astype(np.float32)
+        rgb = arr[..., :3]
+        alpha = arr[..., 3:4]
+
+        alpha_safe = np.where(alpha == 0, 255, alpha)
+        unpremultiplied = np.clip(rgb / (alpha_safe / 255.0), 0, 255)
+
+        arr[..., :3] = unpremultiplied
+        return Image.fromarray(arr.astype(np.uint8), 'RGBA')
+
     def convert_svgs_to_pngs(self):
         os.makedirs(self.emoji_path_png, exist_ok=True)
 
@@ -71,6 +84,7 @@ class Emoji:
 
             png_bytes = svg_to_bytes(svg_path=svg_path, width=self.emoji_size, height=self.emoji_size)
             rendered_img = Image.open(BytesIO(bytes(png_bytes))).convert('RGBA')
+            rendered_img = self._fix_premultiplied_alpha(rendered_img)
 
             if rendered_img.size == (self.emoji_size, self.emoji_size):
                 rendered_img.save(png_path)
