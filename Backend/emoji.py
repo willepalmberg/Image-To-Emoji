@@ -60,7 +60,7 @@ class Emoji:
                         shutil.copyfileobj(source, target)
 
     @staticmethod
-    def _fix_premultiplied_alpha(self, img: Image.Image) -> Image.Image:
+    def _fix_premultiplied_alpha(img: Image.Image) -> Image.Image:
         arr = np.asarray(img).astype(np.float32)
         rgb = arr[..., :3]
         alpha = arr[..., 3:4]

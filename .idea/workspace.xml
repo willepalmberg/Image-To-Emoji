@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1313731c-87a9-4ec2-be5a-191a8330d76a" name="Changes" comment="Nu är processen supersnabb">
+    <list default="true" id="1313731c-87a9-4ec2-be5a-191a8330d76a" name="Changes" comment="Fick bort en konstig svart outline på png emojis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/emoji.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/emoji.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -126,7 +126,7 @@
       <workItem from="1783091497446" duration="1328000" />
       <workItem from="1783092844222" duration="62000" />
       <workItem from="1783161052029" duration="5710000" />
-      <workItem from="1783178061791" duration="2148000" />
+      <workItem from="1783178061791" duration="2317000" />
     </task>
     <task id="LOCAL−00001" summary="Setup project structure">
       <option name="closed" value="true" />
@@ -366,14 +366,20 @@
       <option name="presentableId" value="LOCAL−00034" />
       <updated>1783180065631</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL−00035" summary="Fick bort en konstig svart outline på png emojis">
+      <option name="closed" value="true" />
+      <created>1783180269928</created>
+      <option name="number" value="LOCAL−00035" />
+      <option name="presentableId" value="LOCAL−00035" />
+      <updated>1783180269928</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create .gitignore" />
     <MESSAGE value="Update workspace.xml" />
     <MESSAGE value="Skapa ett agent script med Agent klass i" />
     <MESSAGE value="Lägg till fonten med emojis" />
@@ -398,10 +404,11 @@
     <MESSAGE value="Gör så att alla emojis bakgrunder blir transparanta" />
     <MESSAGE value="Klipp in emojis på bild, ingen transparans" />
     <MESSAGE value="Nu är processen supersnabb" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nu är processen supersnabb" />
+    <MESSAGE value="Fick bort en konstig svart outline på png emojis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fick bort en konstig svart outline på png emojis" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ImageToEmoji$agent.coverage" NAME="agent Coverage Results" MODIFIED="1781811550868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend" />
-    <SUITE FILE_PATH="coverage/ImageToEmoji$main.coverage" NAME="main Coverage Results" MODIFIED="1783180072348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ImageToEmoji$main.coverage" NAME="main Coverage Results" MODIFIED="1783180379583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
