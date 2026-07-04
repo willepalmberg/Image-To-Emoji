@@ -11,5 +11,7 @@ dependencies = [
     "pilmoji>=2.0.5",
     "reportlab>=5.0.0",
     "requests>=2.34.2",
+    "resvg-py>=0.3.3",
+    "rlpycairo>=0.4.0",
     "svglib>=2.0.2",
 ]

@@ -1,5 +1,4 @@
-from io import BytesIO
-
+from resvg_py import svg_to_bytes
 import cv2
 import numpy
 from PIL import Image
@@ -9,8 +8,6 @@ import requests
 import os
 import zipfile
 import shutil
-from svglib.svglib import svg2rlg
-from reportlab.graphics import renderPM
 from io import BytesIO
 
 # Här får vi våra svg emojis ifrån
@@ -62,30 +59,20 @@ def convert_svgs_to_pngs():
     if not os.path.exists:
         os.makedirs(EMOJI_PATH_PNG)
 
-    for filename in os.listdir(EMOJI_PATH_SVG):
+    for i, filename in enumerate(os.listdir(EMOJI_PATH_SVG)):
         if filename.endswith('.svg'):
             svg_path = os.path.join(EMOJI_PATH_SVG, filename)
             png_path = os.path.join(EMOJI_PATH_PNG, filename.replace('.svg', '.png'))
 
-            drawing = svg2rlg(svg_path)
-
-            scale = min(EMOJI_SIZE / drawing.width, EMOJI_SIZE / drawing.height)
-            drawing.width *= scale
-            drawing.height *= scale
-            drawing.scale(scale, scale)
-
-            buffer = BytesIO()
-            renderPM.drawToFile(drawing, buffer, fmt="PNG", bg=0x000000)
-
-            buffer.seek(0)
-            rendered_emoji = Image.open(buffer)
+            png_bytes = svg_to_bytes(svg_path=svg_path, width=EMOJI_SIZE, height=EMOJI_SIZE)
+            rendered_img = Image.open(BytesIO(bytes(png_bytes))).convert('RGBA')
 
             canvas = Image.new('RGBA', (EMOJI_SIZE, EMOJI_SIZE), (0, 0, 0, 0))
-            paste_x = (EMOJI_SIZE - rendered_emoji.width) // 2
-            paste_y = (EMOJI_SIZE - rendered_emoji.height) // 2
-            canvas.paste(rendered_emoji, (paste_x, paste_y))
-
+            paste_x = (EMOJI_SIZE - rendered_img.width) // 2
+            paste_y = (EMOJI_SIZE - rendered_img.height) // 2
+            canvas.paste(rendered_img, (paste_x, paste_y), rendered_img)
             canvas.save(png_path)
+            print(f'Converted {filename} to {png_path} | {i + 1}/{len(os.listdir(EMOJI_PATH_SVG))}')
 
 if os.path.isfile('emojis.zip'):
     print("emojis.zip already exists")
@@ -98,3 +85,9 @@ if len(os.listdir(EMOJI_PATH_SVG)) == 0:
 
 else:
     print('emojis.zip already extracted')
+
+if not os.path.exists(EMOJI_PATH_PNG):
+    os.makedirs(EMOJI_PATH_PNG)
+
+if len(os.listdir(EMOJI_PATH_PNG)) == 0:
+    convert_svgs_to_pngs()
