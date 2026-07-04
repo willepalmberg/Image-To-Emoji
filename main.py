@@ -2,7 +2,6 @@ from resvg_py import svg_to_bytes
 import cv2
 import numpy
 from PIL import Image
-import emoji
 import sys
 import requests
 import os
@@ -72,13 +71,17 @@ def convert_svgs_to_pngs():
             paste_y = (EMOJI_SIZE - rendered_img.height) // 2
             canvas.paste(rendered_img, (paste_x, paste_y), rendered_img)
             canvas.save(png_path)
-            print(f'Converted {filename} to {png_path} | {i + 1}/{len(os.listdir(EMOJI_PATH_SVG))}')
+
+            print(f'({i+1}/{len(os.listdir(EMOJI_PATH_SVG))}) | {filename} converted to PNG')
 
 if os.path.isfile('emojis.zip'):
     print("emojis.zip already exists")
 else:
     print("emojis.zip does not exist")
     download_emojis()
+
+if not os.path.exists(EMOJI_PATH_SVG):
+    os.makedirs(EMOJI_PATH_SVG)
 
 if len(os.listdir(EMOJI_PATH_SVG)) == 0:
     extract_emojis()
