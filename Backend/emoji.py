@@ -72,15 +72,11 @@ class Emoji:
             png_bytes = svg_to_bytes(svg_path=svg_path, width=self.emoji_size, height=self.emoji_size)
             rendered_img = Image.open(BytesIO(bytes(png_bytes))).convert('RGBA')
 
-            if rendered_img.size == (self.emoji_size, self.emoji_size):
-                rendered_img.save(png_path)
-
-            else:
-                canvas = Image.new('RGBA', (self.emoji_size, self.emoji_size), (0, 0, 0, 0))
-                paste_x = (self.emoji_size - rendered_img.width) // 2
-                paste_y = (self.emoji_size - rendered_img.height) // 2
-                canvas.paste(rendered_img, (paste_x, paste_y), rendered_img)
-                canvas.save(png_path)
+            canvas = Image.new('RGBA', (self.emoji_size, self.emoji_size), (0, 0, 0, 0))
+            paste_x = (self.emoji_size - rendered_img.width) // 2
+            paste_y = (self.emoji_size - rendered_img.height) // 2
+            canvas.paste(rendered_img, (paste_x, paste_y), rendered_img)
+            canvas.save(png_path)
 
             print(f'({i + 1}/{total}) | {filename} converted to PNG')
 

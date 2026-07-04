@@ -31,5 +31,6 @@ if len(os.listdir(EMOJI_PATH_PNG)) == 0:
     emoji.convert_svgs_to_pngs()
 
 print(f'Loading emojis into memory...')
-emojis = emoji.load_emojis_to_memory()
-print(f'Loaded {len(emojis)} emojis into memory')
+emoji.load_emojis_to_memory()
+
+emoji.grab_random_emoji().show()
