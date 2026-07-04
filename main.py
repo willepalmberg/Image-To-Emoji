@@ -9,7 +9,8 @@ import requests
 import os
 import zipfile
 import shutil
-import cairosvg
+from svglib.svglib import svg2rlg
+from reportlab.graphics import renderPM
 from io import BytesIO
 
 # Här får vi våra svg emojis ifrån
@@ -66,25 +67,23 @@ def convert_svgs_to_pngs():
             svg_path = os.path.join(EMOJI_PATH_SVG, filename)
             png_path = os.path.join(EMOJI_PATH_PNG, filename.replace('.svg', '.png'))
 
-            bytes = cairosvg.svg2png(
-                url=svg_path,
-                output_width=EMOJI_SIZE,
-                output_height=EMOJI_SIZE,
-            )
+            drawing = svg2rlg(svg_path)
 
-            rendered_emoji = Image.open(BytesIO(bytes)).convert('RGBA')
+            scale = min(EMOJI_SIZE / drawing.width, EMOJI_SIZE / drawing.height)
+            drawing.width *= scale
+            drawing.height *= scale
+            drawing.scale(scale, scale)
 
-            w, h = rendered_emoji.size
+            buffer = BytesIO()
+            renderPM.drawToFile(drawing, buffer, fmt="PNG", bg=0x000000)
 
-            if w != EMOJI_SIZE or h != EMOJI_SIZE:
-                scale = min(EMOJI_SIZE / w, EMOJI_SIZE / h)
-                new_w, new_h = int(w * scale), int(h * scale)
-                rendered_emoji_image = rendered_emoji.resize((new_w, new_h), Image.LANCZOS)
+            buffer.seek(0)
+            rendered_emoji = Image.open(buffer)
 
             canvas = Image.new('RGBA', (EMOJI_SIZE, EMOJI_SIZE), (0, 0, 0, 0))
-            paste_x = (EMOJI_SIZE - new_w) // 2
-            paste_y = (EMOJI_SIZE - new_h) // 2
-            canvas.paste(rendered_emoji_image, (paste_x, paste_y))
+            paste_x = (EMOJI_SIZE - rendered_emoji.width) // 2
+            paste_y = (EMOJI_SIZE - rendered_emoji.height) // 2
+            canvas.paste(rendered_emoji, (paste_x, paste_y))
 
             canvas.save(png_path)
 
