@@ -1,4 +1,6 @@
 from Backend.emoji import Emoji
+from PIL import Image
+from random import randint
 import os
 
 
@@ -33,4 +35,13 @@ if len(os.listdir(EMOJI_PATH_PNG)) == 0:
 print(f'Loading emojis into memory...')
 emoji.load_emojis_to_memory()
 
-emoji.grab_random_emoji().show()
+
+im = Image.open('test_image.jpg').convert('RGBA')
+for i in range(100):
+    em = emoji.grab_random_emoji()
+
+    x, y = randint(0, im.width - EMOJI_SIZE), randint(0, im.height - EMOJI_SIZE)
+
+    im.paste(em, (x, y))
+
+im.show()
