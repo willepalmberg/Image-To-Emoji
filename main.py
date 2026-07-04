@@ -34,14 +34,16 @@ if len(os.listdir(EMOJI_PATH_PNG)) == 0:
 
 print(f'Loading emojis into memory...')
 emoji.load_emojis_to_memory()
+print('Done!')
 
 
+print('Adding emojis to image...')
 im = Image.open('test_image.jpg').convert('RGBA')
-for i in range(100):
+for i in range(1000):
     em = emoji.grab_random_emoji()
 
     x, y = randint(0, im.width - EMOJI_SIZE), randint(0, im.height - EMOJI_SIZE)
 
-    im.paste(em, (x, y))
+    im.paste(em, (x, y), em)
 
 im.show()
